@@ -2,6 +2,13 @@
   "name": "wtr",
   "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "esbuild src/**/*_test.js src/test_framework.js --bundle --outdir=dist/tests/ --external:/node_modules/@web/test-runner-core/* --format=esm",
+    "test": "npm run -s build && web-test-runner \"dist/tests/**/*_test.js\"",
+    "test:watch": "npm run -s test -- --watch"
+  },
+  "devDependencies": {
+    "@web/test-runner": "^0.17.1",
+    "esbuild": "^0.19.2",
+    "jasmine-core": "^5.1.1"
   }
 }
