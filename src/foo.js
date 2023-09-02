@@ -1,5 +1,5 @@
-import { bar } from './bar.js';
+import * as bar from './bar.js';
 
 export function foo() {
-  return `bar says: ${bar()}`;
+  return `bar says: ${bar.bar()}`;
 }

@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@web/test-runner": "^0.17.1",
+    "@web/test-runner-puppeteer": "^0.14.0",
     "esbuild": "^0.19.2",
     "jasmine-core": "^5.1.1"
   }
