@@ -1,0 +1,13 @@
+diff --git a/node_modules/@web/test-runner-coverage-v8/dist/index.js b/node_modules/@web/test-runner-coverage-v8/dist/index.js
+index 997bcfc..ba6c655 100644
+--- a/node_modules/@web/test-runner-coverage-v8/dist/index.js
++++ b/node_modules/@web/test-runner-coverage-v8/dist/index.js
+@@ -64,7 +64,7 @@ async function v8ToIstanbul(config, testFiles, coverage, userAgent) {
+             !path.startsWith('/__web-dev-server')) {
+             try {
+                 const filePath = (0, path_1.join)(config.rootDir, (0, utils_1.toFilePath)(path));
+-                if (!testFiles.includes(filePath) && included(filePath) && !excluded(filePath)) {
++                if (included(filePath) && !excluded(filePath)) {
+                     const browserUrl = `${url.pathname}${url.search}${url.hash}`;
+                     const cachedSource = cachedSources.get(browserUrl);
+                     const sources = cachedSource !== null && cachedSource !== void 0 ? cachedSource : (await (0, test_runner_core_1.fetchSourceMap)({

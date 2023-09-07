@@ -2,6 +2,11 @@ export default {
   testFramework: {
     path: './dist/tests/test_framework.js',
   },
+  coverageConfig: {
+    // Doesn't work.
+    include: ['dist/tests/**/*.js'],
+    exclude: ['dist/tests/test_framework.js', '**/node_modules/**/*'],
+  },
   testRunnerHtml() {
     return `
 <!DOCTYPE html>
