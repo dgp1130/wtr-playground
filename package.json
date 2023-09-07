@@ -2,18 +2,21 @@
   "name": "wtr",
   "version": "0.0.0",
   "scripts": {
-    "build": "esbuild src/**/*_test.js src/test_framework.js --bundle --outdir=dist/tests/ --external:/node_modules/@web/test-runner-core/* --splitting --format=esm --sourcemap",
-    "test": "npm run -s build && web-test-runner \"dist/tests/**/*_test.js\"",
+    "build": "esbuild src/**/*_test.ts src/test_framework.js --bundle --outdir=dist/tests/ --external:/node_modules/@web/test-runner-core/* --format=esm --sourcemap",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run -s check && npm run -s build && web-test-runner \"dist/tests/**/*_test.js\"",
     "test:watch": "npm run -s test -- --watch",
     "coverage": "npm run -s -- test --coverage && http-server coverage/lcov-report/",
     "postinstall": "patch-package"
   },
   "devDependencies": {
+    "@types/jasmine": "^4.3.5",
     "@web/test-runner": "^0.17.1",
     "@web/test-runner-puppeteer": "^0.14.0",
     "esbuild": "^0.19.2",
     "http-server": "^14.1.1",
     "jasmine-core": "^5.1.1",
-    "patch-package": "^8.0.0"
+    "patch-package": "^8.0.0",
+    "typescript": "^5.2.2"
   }
 }

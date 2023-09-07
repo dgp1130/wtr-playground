@@ -1,4 +1,4 @@
-export function bar() {
+export function bar(): string {
   return 'bar';
 }
 
