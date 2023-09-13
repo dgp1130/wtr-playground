@@ -1,6 +1,7 @@
 {
   "name": "wtr",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "build": "esbuild src/**/*_test.ts src/test_framework.js --bundle --outdir=dist/tests/ --external:/node_modules/@web/test-runner-core/* --format=esm --sourcemap",
     "check": "tsc -p tsconfig.json --noEmit",
@@ -18,5 +19,8 @@
     "jasmine-core": "^5.1.1",
     "patch-package": "^8.0.0",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "lit": "^2.8.0"
   }
 }
