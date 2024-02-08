@@ -3,9 +3,18 @@ export default {
     path: './dist/tests/test_framework.js',
   },
   coverageConfig: {
-    // Doesn't work.
+    // Doesn't work, still drops content in test files.
     include: ['dist/tests/**/*.js'],
-    exclude: ['dist/tests/test_framework.js', '**/node_modules/**/*'],
+    exclude: [
+      'dist/tests/test_framework.js',
+
+      // Doesn't work. Should take sourcemaps into account but doesn't.
+      '**/node_modules/**/*',
+
+      // ESBuild pulls an `__export` utility into a shared chunk with no sourcemap. However
+      // excluding all chunks means nothing is displayed in coverage, so we can't do this.
+      // 'dist/tests/chunk-*.js',
+    ],
   },
   testRunnerHtml() {
     return `

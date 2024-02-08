@@ -9,3 +9,9 @@ well its features work with a pre-build approach using Jasmine.
 *   Runs code coverage on the result.
 
 See [`package.json`](/package.json) scripts for more info.
+
+## Code Coverage Reproduction
+
+* `npm ci`
+* `npm run coverage`
+* Open http://localhost:8080

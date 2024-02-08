@@ -1,6 +1,7 @@
 import * as bar from './bar.js';
 import { foo } from './foo.js';
 
+// Tests spying behavior.
 describe('foo', () => {
   it('calls bar', () => {
     expect(foo()).toBe('bar says: bar');
