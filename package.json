@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "npm run -s clean && npm run -s check && npm run -s bundle",
-    "bundle": "esbuild src/**/*_test.ts src/test_framework.js --bundle --splitting --tree-shaking=true --outdir=dist/tests/ --external:/node_modules/@web/test-runner-core/* --format=esm --sourcemap",
+    "bundle": "esbuild src/**/*_test.ts src/test_framework.js --bundle --splitting --outdir=dist/tests/ --external:/node_modules/@web/test-runner-core/* --format=esm --sourcemap",
     "check": "tsc -p tsconfig.json --noEmit",
     "test": "npm run -s build && web-test-runner \"dist/tests/**/*_test.js\"",
     "test:watch": "npm run -s test -- --watch",
